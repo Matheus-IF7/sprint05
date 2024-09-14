@@ -1,0 +1,3 @@
+STATUS=API
+ENVIRONMENT=development
+API_KEY=your-api-key

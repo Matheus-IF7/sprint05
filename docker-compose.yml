@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      S3_BUCKET_NAME: your-s3-bucket-name
+      DATABASE_URL: your-rds-database-url
+      API_KEY: your-api-key
+    env_file:
+      - .env  # Certifique-se que o arquivo .env está no mesmo nível do docker-compose.yml
+    volumes:
+      - ./src/api:/app # Mapeie o diretório de trabalho para garantir que a aplicação tenha os arquivos corretos.
